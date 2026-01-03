@@ -1,0 +1,16 @@
+	DBmainTable	DBidCol	DBselectConstrain	TableHeading	TableLabel	AccessControll	RowsPerPage	SortColumn		SortDirection	UrlButton1	UrlButton2	UrlButton3	SQLbutton1	ShowButtons	ShowDelete	ShowCsvButton	ShowSqlButton	DefFilterCol	TableUrlButton1
+	users	loginame		Naudotojų sąrašas	Oks-sistemos naudotojų sąrašas	1	100	loginame		asc	✏️:troll-form.php?form=user&id=				1	1	1	1	loginame	➕ pildyti:troll-form.php?form=user
+																				
+Name	DBtable	DBcolumn	Type	Heading	Label	DBChildTableReveal	FilterValuesList	Style	Class	FilterType	FilterValue		ValuesListUsage							
+favorit_color	users	favorit_color	Color	Spalva	Mėgstamiausia vartotojo spalva					*abc*										
+loginame	users	loginame		Slapyvardis						*abc*										
+user_rigts	users	user_rigts		Teisės			SQL:SELECT pareigu_id, santrumpa FROM pareigos			=			3							
+account_active	users	account_active		Aktyvus			list2:1,Taip,0,Ne			=			3							
+company	users	company		Įmonė	Iš kokios įmonės yra darbuotojas		list:Opera klausos sprendimai,Sonnos			=										
+division	users	division		Padalinys	Kokiam padaliniui darbuotojas priklauso.					*abc*										
+miestas1	users	miestas1		Miestas 1	Kokius miestus rodyti vartotojui sąrašuose.					*abc*										
+miestas2	users	miestas2		Miestas 2	Kokius miestus rodyti vartotojui sąrašuose.					*abc*										
+miestas3	users	miestas3		Miestas 3	Kokius miestus rodyti vartotojui sąrašuose.					*abc*										
+miestas4	users	miestas4		Miestas 4	Kokius miestus rodyti vartotojui sąrašuose.					*abc*										
+last_attempt	users	last_attempt		Naujausias prisijungimas	Kada paskutinį karta vartojas bandė prisijungti					[0 1]										
+failed_attempts	users	failed_attempts		Bandymai	Nepavyke priijungimo bandymai. Kiek kartų iš eilės vartotojas įvedė neteisinga slaptažodį.					=										

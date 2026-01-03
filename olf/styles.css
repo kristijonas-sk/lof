@@ -1,0 +1,111 @@
+body
+{
+    background-image: url('img/background.jpg');
+    background-size: cover;
+
+    margin: 2rem;
+    margin-top: 5rem;
+    /*min-height: 100vh;*/
+    display: flex;
+    justify-content: center; /* horizontal */
+    align-items: center;     /* vertical */
+}
+
+a
+{
+  text-decoration:underline;
+  text-underline-offset: 2px; /* Increase value for more space */
+}
+
+h1
+{
+margin-top:0px;
+}
+
+input,
+textarea,
+select,
+button
+{
+  font-size: 1rem;        /* bigger text */
+  padding: 0.75rem 1rem;  /* vertical | horizontal */
+  border-radius: 12px;
+}
+
+#lang_select
+{
+/*
+  font-size:0.5rem; border-radius:4px; padding:0.2rem;
+  width:auto;
+  */
+}
+
+.content_box
+{
+    padding:2rem;
+    padding-bottom:0.4rem;
+    background: #eee;
+    
+    border-radius:12px;
+    text-align:center;
+}
+
+.content_box_footer
+{
+  font-size:0.9rem;
+  display:flex;
+  justify-content:space-between;
+  text-decoration:none;
+  padding:0rem;
+  margin:0rem;
+  margin-top:1.8rem;
+}
+
+.error
+{
+  font-size:1.2rem;
+  background-color:red;
+  color:black;
+  padding:0.2rem;
+}
+
+
+.meniu_ico
+{
+  height:2.8rem;
+  transition: transform 0.4s ease;
+}
+
+.meniu_ico:hover
+{
+  transform:scale(1.5);
+}
+
+#meniu
+{
+ font-size:0.9rem;
+ 
+  position:fixed;
+  top:4px;
+  left:4px;
+  right:4px;
+  
+  background:#ece1a9;
+  
+  margin:0px;
+  padding:0.2rem;
+  padding-left:0.6rem;
+  padding-right:0.6rem;
+  border: 3px solid grey;
+  border-radius: 6px;
+  
+  box-sizing: border-box;
+  
+  display:flex;
+  justify-content:space-between;
+}
+
+.submeniu_item
+{
+font-size:1.2rem;
+}
