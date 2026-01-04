@@ -206,7 +206,7 @@ function main()
 		echo('<p class="error">'.$Errors.'</p>');
 	}
 	?>
-	<form method="post" action="login.php" style="text-align:left">
+	<form method="post" action="login.php" class="type1">
 
 		<label for="username" class="type1"><?= Translate('User',$trn) ?></label><br>
 		<input type="text" name="username" id="username" value="" class="type1" required autocomplete="username"><br><br>
