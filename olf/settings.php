@@ -1,7 +1,7 @@
 <?php
 define('OLF_SQL_SERVER','localhost');
-define('OLF_SQL_USER','root');
-define('OLF_SQL_PASSWORD','ruTuo999');
+define('OLF_SQL_USER','user'); // Mariadb user that have all privileges on project database.
+define('OLF_SQL_PASSWORD','cosmicaly_secret_password');
 define('OLF_SQL_DB','old_leafs_collection');
 
 define('OLF_LOAD_FROM_USERS',''); // Coma sepparated list of additional columns in table „users“ that must be loaded to $UserInfo; 
