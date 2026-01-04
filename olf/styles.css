@@ -11,6 +11,11 @@ body
     align-items: center;     /* vertical */
 }
 
+p
+{
+text-align:left;
+}
+
 a
 {
   text-decoration:underline;
@@ -22,14 +27,22 @@ h1
 margin-top:0px;
 }
 
+
+
 input,
 textarea,
 select,
 button
 {
-  font-size: 1rem;        /* bigger text */
+  font-size: 1rem;
   padding: 0.75rem 1rem;  /* vertical | horizontal */
   border-radius: 12px;
+}
+
+input:read-only
+{
+  background-color: lightgray;
+  border: 0;
 }
 
 #lang_select
@@ -128,4 +141,9 @@ input.type1, select.type1
 label.type1
 {
 padding-left:0.6rem;
+}
+
+form.type1
+{
+text-align:left;
 }
