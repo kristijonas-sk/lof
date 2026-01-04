@@ -69,6 +69,14 @@ button
   padding:0.2rem;
 }
 
+.success
+{
+  font-size:1.2rem;
+  background-color:green;
+  color:black;
+  padding:0.2rem;
+}
+
 
 .meniu_ico
 {
@@ -108,4 +116,16 @@ button
 .submeniu_item
 {
 font-size:1.2rem;
+}
+
+input.type1, select.type1
+{
+		width: 100%;
+		box-sizing: border-box;
+		margin:0.4rem;
+}
+
+label.type1
+{
+padding-left:0.6rem;
 }

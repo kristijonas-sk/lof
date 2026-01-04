@@ -191,16 +191,6 @@ function main()
 	<link rel="stylesheet" type="text/css" href="styles.css" />
 	<link rel="shortcut icon" type="image/png" href="img/ico.png" />
 	<style>
-	input, select
-	{
-		width: 100%;
-		box-sizing: border-box;
-		margin:0.4rem;
-	}
-	label
-	{
-	padding-left:0.6rem;
-	}
 	</style>
 	<title><?= Translate('User login',$trn) ?></title>
 </head>
@@ -208,7 +198,7 @@ function main()
 
 <div class="content_box">
 
-	<h1><?php echo OLF_PROJECT_NAME;?></h1>
+	<h1><?= OLF_PROJECT_NAME ?></h1>
 	<h2><?= Translate('User login',$trn) ?></h2>
 	<?php
 	if( strlen( $Errors ) > 0 )
@@ -218,14 +208,14 @@ function main()
 	?>
 	<form method="post" action="login.php" style="text-align:left">
 
-		<label for="username"><?= Translate('User',$trn) ?></label><br>
-		<input type="text" name="username" id="username" value="" required autocomplete="username"><br><br>
+		<label for="username" class="type1"><?= Translate('User',$trn) ?></label><br>
+		<input type="text" name="username" id="username" value="" class="type1" required autocomplete="username"><br><br>
 		
-		<label for="slaptazodis"><?= Translate('Password',$trn) ?></label><br>
-		<input type="password" name="slaptazodis" id="slaptazodis" required autocomplete="current-password"><br><br>
+		<label for="slaptazodis" class="type1"><?= Translate('Password',$trn) ?></label><br>
+		<input type="password" name="slaptazodis" id="slaptazodis" class="type1" required autocomplete="current-password"><br><br>
 		
-		<label for="login_time"><?= Translate('Login duration',$trn) ?></label><br>
-		<select name="login_time" id="login_time">
+		<label for="login_time" class="type1"><?= Translate('Login duration',$trn) ?></label><br>
+		<select name="login_time" id="login_time" class="type1">
 			<option value="0" selected><?= Translate('Until window closed',$trn) ?></option>
 			<option value="60" >1 <?= Translate('minute',$trn) ?></option>
 			<option value="900" >15 <?= Translate('minutes',$trn) ?></option>
@@ -245,15 +235,18 @@ function main()
 		<button type="submit"><?= Translate('login',$trn) ?></button>
 		</div>
 		
+		<br>
+		<br>
+		
 	</form>
 	
-	<div class="content_box_footer"></div>
+	<!-- <div class="content_box_footer"></div> -->
 </div> 
 
-		<select name="lang_select" id="lang_select" onchange="OLF_SetLanguage()" style="position:absolute;right:8px;top:12px;font-size:1.8rem;border-radius:16px;padding:0.4rem;width:auto;">
-			<option value="LT" <?php if( Translate('lang',$trn) == 'LT' ) echo " selected " ?>>LT</option>
-			<option value="EN" <?php if( Translate('lang',$trn) == 'EN' ) echo " selected " ?>>EN</option>
-		</select>
+	<select name="lang_select" id="lang_select" onchange="OLF_SetLanguage()" style="position:absolute;right:8px;top:12px;font-size:1.8rem;border-radius:16px;padding:0.4rem;width:auto;">
+		<option value="LT" <?php if( Translate('lang',$trn) == 'LT' ) echo " selected " ?>>LT</option>
+		<option value="EN" <?php if( Translate('lang',$trn) == 'EN' ) echo " selected " ?>>EN</option>
+	</select>
 
 	<script src="script.js"></script>
 	<script>
