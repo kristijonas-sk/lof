@@ -26,7 +26,7 @@ mysqli_close( $DBlink );
 	<meta name="description" content="" /> 
 	<meta name="keywords" content="" />
 	<link rel="stylesheet" type="text/css" href="styles.css" />
-	<link rel="shortcut icon" type="image/png" href="img/piktograma.png" />
+	<link rel="shortcut icon" type="image/png" href="img/ico.png" />
 	<style>
 	</style>
 	<title><?= Translate('Welcome', $trn ) ?></title>
