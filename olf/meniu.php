@@ -1,4 +1,6 @@
 <?php
+if( empty( $UserInfo ) ) exit; // If php file opened directly by browser instead including as meniu.
+
 class MenuItem
 {
 	public $Name, $Url, $Title, $Rights = Array();
