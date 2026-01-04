@@ -38,8 +38,9 @@ mysqli_close( $DBlink );
 <div class="content_box">
 	<h1><?php echo OLF_PROJECT_NAME;?></h1>
 	<hr>
-	<p style="font-size:1.6rem"><?= $UserInfo['greeting'] ?></p>
+	<p style="font-size:1.6rem;text-align:center"><?= $UserInfo['greeting'] ?></p>
 	<hr>
+	🔑 <a href="password.php"><?= Translate('Change password',$trn) ?></a>
 	<div class="content_box_footer">
 	<div><?= Translate('Version', $trn ) ?> 2026-01-03</div>
 	<div>

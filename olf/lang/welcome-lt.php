@@ -3,6 +3,6 @@ return [
 'lang' => 'LT',
 'Welcome' => 'Sveiki atvykę',
 'Version' => 'Versija',
-'Log out' => 'Atsijungti'
-
+'Log out' => 'Atsijungti',
+'Change password' => 'Keisti slaptažodį'
 ];
