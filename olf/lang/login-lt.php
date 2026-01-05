@@ -18,7 +18,7 @@ return [
 'login' => 'prisijungti',
 'Login failed' => 'Prisijungti nepavyko',
 'Incorrect user name or password' => 'Neteisingas vartotojo vardas arba slaptažodis',
-'Too much incorrect attempts' => 'Per daug nesėkmingų bandymų. Pabandykite vėl po 15 min.',
+'Too much incorrect attempts' => 'Per daug nesėkmingų bandymų (pabandykite vėl po 15 min.)',
 'Failed to add session to database' => 'Sesijos įtraukti į duombazę nepavyko',
 'Failed to connect to the database' => 'Nepavyko prisijungti prie duombazės'
 ];

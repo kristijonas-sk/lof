@@ -18,7 +18,7 @@ return [
 'login' => 'login',
 'Login failed' => 'Login failed',
 'Incorrect user name or password' => 'Incorrect user name or password',
-'Too much incorrect attempts' => 'Too much incorrect attempts. Try again after 15 min.',
+'Too much incorrect attempts' => 'Too much incorrect attempts (try again after 15 min.)',
 'Failed to add session to database' => 'Failed to add session to database',
 'Failed to connect to the database' => 'Failed to connect to the database'
 ];
