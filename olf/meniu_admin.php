@@ -39,6 +39,7 @@ mysqli_close( $DBlink );
 	<h1><?= Translate('Administration Meniu', $trn ) ?></h1>
 	<hr>
 	<p class="submeniu_item"><a href=""><?= Translate('Users List', $trn ) ?></a></p>
+	<p class="submeniu_item"><a href="db_tables.php"><?= Translate('Database tables', $trn ) ?></a></p>
 	</div>
 </div>
 
