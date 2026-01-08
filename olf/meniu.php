@@ -23,7 +23,7 @@ $Menu = Array();
 
 $Menu[] = new MenuItem( "<img src=\"img/ico/home.svg\" class=\"meniu_ico\">", "welcome.php", "1,2,3,4,5", "Pradžia."  );
 $Menu[] = new MenuItem( "<img src=\"img/ico/database.svg\" class=\"meniu_ico\">", "meniu_admin.php", "1", "Duombazės valdymas."  );
-$Menu[] = new MenuItem( "<img src=\"img/ico/book.svg\" class=\"meniu_ico\">", "gaminiai", "1,2,3,4,5", "Operos lab gaminami gaminiai" );
+$Menu[] = new MenuItem( "<img src=\"img/ico/book.svg\" class=\"meniu_ico\">", "gaminiai", "1,2,3,4,5", "Operos lab gaminami gaminiai." );
 
 
 ?>
