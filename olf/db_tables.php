@@ -19,13 +19,13 @@ function DatabaseTables( $DBlink )
 {
 	global $trn;
 	$txt = '';
-	$txt .= '<p>'. Translate('Database name', $trn ) .':<br><b>'.OLF_SQL_DB.'</b></p>';
+	// $txt .= '<p>'. Translate('Database name', $trn ) .':<br><b>'.OLF_SQL_DB.'</b></p>';
 
 	$Rez = mysqli_query( $DBlink, 'SHOW TABLES' ); //Reading all db tables names.
 	
-	$txt .= '<p>';
-	$txt .= Translate('Database tables', $trn ).':<br>';
+	// $txt .= Translate('Database tables', $trn ).':<br>';
 
+	$n = 0;
 	while( $CurrentRow = mysqli_fetch_array( $Rez, MYSQLI_NUM ) )
 	{
 		$CurrentTableName = $CurrentRow[0];
@@ -35,12 +35,12 @@ function DatabaseTables( $DBlink )
 		mysqli_free_result( $Rez2 );
 
 		$txt .= "<b><a href=\"db_table_info.php?table=".urlencode($CurrentTableName)."\">$CurrentTableName</a></b> ($CurrentN); ";
+		$n++;
 	}
-	$txt .= '</p>';
 	
 	mysqli_free_result( $Rez );
 	
-	return $txt;
+	return '<p>'.Translate('Database tables', $trn )." ($n):<br>$txt</p>";
 }
 
 ?>
