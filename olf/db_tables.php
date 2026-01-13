@@ -23,8 +23,8 @@ function SukurtLentele( $DBlink )
 
 	$Rez = mysqli_query( $DBlink, 'SHOW TABLES' ); //Reading all db tables names.
 	
-	
-	$txt .= '<p>'.Translate('Database tables', $trn ).':</p>';
+	$txt .= '<p>';
+	$txt .= Translate('Database tables', $trn ).':<br>';
 
 	while( $CurrentRow = mysqli_fetch_array( $Rez, MYSQLI_NUM ) )
 	{
@@ -34,11 +34,12 @@ function SukurtLentele( $DBlink )
 		$CurrentN = mysqli_fetch_array( $Rez2 )['HowMuchEntries'];
 		mysqli_free_result( $Rez2 );
 
-		$txt .= '<p>';
-		$txt .= "<b>$CurrentTableName</b> ($CurrentN)";
+		//$txt .= '<p>';
+		$txt .= "<b><a href=\"db_table_info.php?table=".urlencode($CurrentTableName)."\">$CurrentTableName</a></b> ($CurrentN); ";
 		//TODO: show list of table columns
-		$txt .= '</p>';
+		//$txt .= '</p>';
 	}
+	$txt .= '</p>';
 	
 	mysqli_free_result( $Rez );
 	
