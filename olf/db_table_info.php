@@ -19,7 +19,7 @@ function SukurtLentele( $DBlink )
 {
 	global $trn;
 	$txt = '';
-	$txt .= '<p>'. Translate('Database name', $trn ) .':<br><b>'.OLF_SQL_DB.'</b></p>';
+	$txt .= '<p>'. Translate('Database name', $trn ) .':<br><b><a href="db_tables.php">'.OLF_SQL_DB.'</b></a></p>';
 	$txt .= '<p>'. Translate('Table name', $trn ) .':<br><b>'.$_GET['table'].'</b></p>';
 
 	$Rez = mysqli_query( $DBlink, 'SHOW TABLES' ); //Reading all db tables names.
