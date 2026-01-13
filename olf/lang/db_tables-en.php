@@ -9,4 +9,5 @@ return [
 'Comment' => 'Comment',
 'Structure' => 'Structure',
 'Records' => 'Records',
+'tables' => 'tables',
 ];

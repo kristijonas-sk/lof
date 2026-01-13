@@ -70,7 +70,7 @@ function DatabaseTables( $DBlink )
 	/// $txt2 = '<p>'. Translate('Database', $trn ) .': <b>'.OLF_SQL_DB.'</b></p>';
 	/// $txt2 .= '<p>'.Translate('Database tables', $trn )." ($n):<br></p>";
 	
-	$txt2 = '<p>[ <b>'.OLF_SQL_DB.'</b> ] tables ('.$n.'):</p>';
+	$txt2 = '<p>[ <b>'.OLF_SQL_DB.'</b> ] '.Translate('tables', $trn ).' ('.$n.'):</p>';
 	$txt2 .= $txt;
 	return $txt2;
 }
