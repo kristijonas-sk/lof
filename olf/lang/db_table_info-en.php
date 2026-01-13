@@ -11,16 +11,5 @@ return [
 'Default value' => 'Default value',
 'Key' => 'Key',
 'Extra' => 'Extra',
-'Comment' => 'Comment',
-'' => '',
-'' => '',
-'' => '',
-'' => '',
-'' => '',
-'' => '',
-'' => '',
-'' => '',
-'' => '',
-'' => '',
-'' => '',
+'Comment' => 'Comment'
 ];
