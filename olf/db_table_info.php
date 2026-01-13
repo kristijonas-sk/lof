@@ -18,31 +18,68 @@ mysqli_close( $DBlink );
 function TableInfo( $DBlink )
 {
 	global $trn;
+	
+	$TableNameForSQL =  mysqli_real_escape_string( $DBlink, $_GET['table'] );
+	$TableNameForHTML = htmlspecialchars( $_GET['table'], ENT_QUOTES );
+	
 	$txt = '';
-	$txt .= '<p>'. Translate('Database name', $trn ) .':<br><b><a href="db_tables.php">'.OLF_SQL_DB.'</b></a></p>';
-	$txt .= '<p>'. Translate('Table name', $trn ) .':<br><b>'.$_GET['table'].'</b></p>';
+	
+	$txt .= "<p>";
+	$txt .= '[ <b><a href="db_tables.php">'.OLF_SQL_DB."</b></a> → $TableNameForHTML ] ".Translate('table structure', $trn ).":";
+	$txt .= "</p>";
+	
+	// Checking if table exist at all:
+	$SQL =
+	"SELECT 1
+	FROM information_schema.tables
+	WHERE table_schema = DATABASE()
+  	AND table_name = '$TableNameForSQL'";
 
-	$Rez = mysqli_query( $DBlink, 'SHOW TABLES' ); //Reading all db tables names.
-	
-	
-	$txt .= '<p>'.Translate('Table structure', $trn ).':</p>';
-/*
-	while( $CurrentRow = mysqli_fetch_array( $Rez, MYSQLI_NUM ) )
+	$Rez = mysqli_query( $DBlink, $SQL );
+	if( mysqli_num_rows( $Rez ) === 0 )
 	{
-		$CurrentTableName = $CurrentRow[0];
-
-		$Rez2 = mysqli_query( $DBlink, 'SELECT COUNT(*) AS HowMuchEntries FROM '.$CurrentRow[0] );
-		$CurrentN = mysqli_fetch_array( $Rez2 )['HowMuchEntries'];
-		mysqli_free_result( $Rez2 );
-
-		$txt .= '<p>';
-		$txt .= "<b>$CurrentTableName</b> ($CurrentN)";
-		//TODO: show list of table columns
-		$txt .= '</p>';
+		$txt .= '<div class="error">';
+		$txt .= Translate('Table does not exist.', $trn );
+		$txt .= "</div>";
+		$txt .= '<p><a href="db_tables.php">'.Translate('View existing tables.', $trn ).'</a></p>';
+		return $txt;
 	}
 	
+	$txt .= '<table>';
+	$txt .= '
+	<tr>
+	<th>'.Translate('Colum name', $trn ).'</th>
+
+	<th>'.Translate('Data type', $trn ).'</th>
+	<th>'.Translate('Can be empty?', $trn ).'</th>
+	<th>'.Translate('Default value', $trn ).'</th>
+
+	<th>'.Translate('Key', $trn ).'</th>
+	<th>'.Translate('Extra', $trn ).'</th>
+	<th>'.Translate('Comment', $trn ).'</th>
+
+	</tr>';
+
+	// Reading information about columns in table:
+	$Rez = mysqli_query( $DBlink, "SHOW FULL COLUMNS FROM $TableNameForSQL" );
+
+	while( $CurrentRow = mysqli_fetch_array( $Rez, MYSQLI_ASSOC ) )
+	{
+		$txt.='
+		<tr>
+		<td>'. htmlspecialchars( $CurrentRow["Field"], ENT_QUOTES) .'</td>
+		<td>'. htmlspecialchars( $CurrentRow["Type"], ENT_QUOTES) .'</td>
+		<td>'. htmlspecialchars( $CurrentRow["Null"], ENT_QUOTES) .'</td>
+		<td>'. htmlspecialchars( $CurrentRow["Default"], ENT_QUOTES) .'</td>
+		<td>'. htmlspecialchars( $CurrentRow["Key"], ENT_QUOTES) .'</td>
+		<td>'. htmlspecialchars( $CurrentRow["Extra"], ENT_QUOTES) .'</td>
+		<td>'. htmlspecialchars( $CurrentRow["Comment"], ENT_QUOTES) .'</td>
+		</tr>';
+	}
+	$txt.='</table>';
+	
 	mysqli_free_result( $Rez );
-	*/
+	
 	return $txt;
 }
 

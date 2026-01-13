@@ -19,7 +19,7 @@ function DatabaseTables( $DBlink )
 {
 	global $trn;
 	$txt = '';
-	// $txt .= '<p>'. Translate('Database name', $trn ) .':<br><b>'.OLF_SQL_DB.'</b></p>';
+
 
 	$Rez = mysqli_query( $DBlink, 'SHOW TABLES' ); //Reading all db tables names.
 	
@@ -40,7 +40,9 @@ function DatabaseTables( $DBlink )
 	
 	mysqli_free_result( $Rez );
 	
-	return '<p>'.Translate('Database tables', $trn )." ($n):<br>$txt</p>";
+	$txt2 = '<p>'. Translate('Database', $trn ) .': <b>'.OLF_SQL_DB.'</b></p>';
+	$txt2 .= '<p>'.Translate('Database tables', $trn )." ($n):<br>$txt</p>";
+	return $txt2;
 }
 
 ?>
