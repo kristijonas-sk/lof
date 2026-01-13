@@ -10,12 +10,12 @@ $DBlink = OLF_ConnectToDB( TRUE );
 $UserInfo = OLF_VerifyUser( $DBlink, "1", TRUE );
 
 
-$Table = SukurtLentele( $DBlink );
+$html_buffer = TableInfo( $DBlink );
 
 mysqli_close( $DBlink );
 
 
-function SukurtLentele( $DBlink )
+function TableInfo( $DBlink )
 {
 	global $trn;
 	$txt = '';
@@ -68,7 +68,7 @@ function SukurtLentele( $DBlink )
 <div class="content_box">
 
 	<h1><?= Translate('Table info', $trn ) ?></h1>
-	<?= $Table; ?>
+	<?= $html_buffer; ?>
 </div>
 
 </body>

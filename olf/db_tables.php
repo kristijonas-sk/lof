@@ -10,12 +10,12 @@ $DBlink = OLF_ConnectToDB( TRUE );
 $UserInfo = OLF_VerifyUser( $DBlink, "1", TRUE );
 
 
-$Table = SukurtLentele( $DBlink );
+$html_buffer = DatabaseTables( $DBlink );
 
 mysqli_close( $DBlink );
 
 
-function SukurtLentele( $DBlink )
+function DatabaseTables( $DBlink )
 {
 	global $trn;
 	$txt = '';
@@ -34,10 +34,7 @@ function SukurtLentele( $DBlink )
 		$CurrentN = mysqli_fetch_array( $Rez2 )['HowMuchEntries'];
 		mysqli_free_result( $Rez2 );
 
-		//$txt .= '<p>';
 		$txt .= "<b><a href=\"db_table_info.php?table=".urlencode($CurrentTableName)."\">$CurrentTableName</a></b> ($CurrentN); ";
-		//TODO: show list of table columns
-		//$txt .= '</p>';
 	}
 	$txt .= '</p>';
 	
@@ -68,7 +65,7 @@ function SukurtLentele( $DBlink )
 <div class="content_box">
 
 	<h1><?= Translate('Database tables', $trn ) ?></h1>
-	<?= $Table; ?>
+	<?= $html_buffer; ?>
 </div>
 
 </body>
